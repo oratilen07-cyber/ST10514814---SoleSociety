@@ -1,0 +1,422 @@
+/* ============================================================
+   SoleSociety — External Stylesheet
+   Design: Warm, community-focused | Earth tones | Clean & modern
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+/* ── CSS Variables ─────────────────────────────────────── */
+:root {
+  --cream:       #F5F0E8;
+  --warm-white:  #FDFAF5;
+  --earth-brown: #6B4E2A;
+  --sand:        #C8A96E;
+  --red-accent:  #C0392B;
+  --dark:        #1A1208;
+  --mid-brown:   #8B6340;
+  --light-tan:   #E8DCC8;
+  --shadow:      rgba(107, 78, 42, 0.15);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-serif:   'Playfair Display', serif;
+  --radius:       8px;
+  --transition:   0.3s ease;
+}
+
+/* ── Reset & Base ──────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--warm-white);
+  color: var(--dark);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ── Header & Nav ──────────────────────────────────────── */
+header {
+  background-color: var(--dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+header nav div {
+  display: flex;
+  align-items: center;
+}
+
+header nav img {
+  border-radius: 50%;
+  border: 3px solid var(--sand);
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+header nav img:hover {
+  transform: scale(1.05);
+}
+
+/* Nav links — override the pipe-separator style cleanly */
+header nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+
+header nav a:hover {
+  background-color: var(--red-accent);
+  color: #fff;
+}
+
+/* Hide the <hr> tags inside nav visually — keep markup untouched */
+header nav hr {
+  display: none;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+footer {
+  background-color: var(--dark);
+  color: var(--sand);
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  margin-top: 60px;
+}
+
+footer hr {
+  display: none;
+}
+
+footer p {
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+/* ── Main Content Area ─────────────────────────────────── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 30px 60px;
+}
+
+/* ── Headings ──────────────────────────────────────────── */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: 0.06em;
+  color: var(--earth-brown);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  color: var(--mid-brown);
+  margin: 32px 0 12px;
+}
+
+h2 u, h1 u {
+  text-decoration: none;
+  border-bottom: 3px solid var(--sand);
+  padding-bottom: 3px;
+}
+
+p {
+  color: #3D2B10;
+  max-width: 680px;
+  margin-bottom: 14px;
+}
+
+/* ── HOME PAGE ─────────────────────────────────────────── */
+
+/* Hero welcome strip */
+main nav[align="Center"] h1,
+main nav[align="center"] h1 {
+  text-align: center;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  color: var(--dark);
+}
+
+main nav[align="Center"] h1 span,
+main nav[align="center"] h1 span {
+  color: var(--red-accent);
+}
+
+main h2 span[style*="color: red"] {
+  color: var(--red-accent) !important;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+}
+
+/* Video gallery row */
+main > nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+main > nav video {
+  border-radius: 12px;
+  border: 3px solid var(--light-tan);
+  box-shadow: 0 6px 24px var(--shadow);
+  object-fit: cover;
+  max-width: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+main > nav video:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(107, 78, 42, 0.28);
+}
+
+/* ── ABOUT PAGE ────────────────────────────────────────── */
+
+/* Wrap about text in a warm card */
+main > p {
+  background: var(--cream);
+  border-left: 5px solid var(--sand);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 22px 26px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 760px;
+}
+
+/* ── DELIVERY PAGE ─────────────────────────────────────── */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+ul li {
+  background: var(--cream);
+  border: 1px solid var(--light-tan);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--earth-brown);
+  position: relative;
+  padding-left: 42px;
+}
+
+ul li::before {
+  content: '→';
+  position: absolute;
+  left: 16px;
+  color: var(--red-accent);
+  font-weight: 700;
+}
+
+/* Delivery fee paragraphs */
+main > p:not(:first-of-type) {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--mid-brown);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* ── FORMS (Contact & Delivery) ────────────────────────── */
+
+form {
+  background: var(--cream);
+  border: 1px solid var(--light-tan);
+  border-radius: 12px;
+  padding: 30px 32px;
+  max-width: 540px;
+  margin: 20px 0 32px;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--earth-brown);
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid var(--light-tan);
+  border-radius: var(--radius);
+  background: var(--warm-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--dark);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  margin-bottom: 18px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--sand);
+  box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.25);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+input[type="submit"] {
+  background-color: var(--red-accent);
+  color: #fff;
+  border: none;
+  padding: 13px 32px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--earth-brown);
+  transform: translateY(-2px);
+}
+
+/* Contact details block */
+main h2 + p {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--mid-brown);
+}
+
+/* ── SHOP PAGE ─────────────────────────────────────────── */
+
+main > p > u {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--earth-brown);
+  text-decoration: none;
+  border-bottom: 3px solid var(--sand);
+  padding-bottom: 2px;
+  display: inline-block;
+  margin: 36px 0 16px;
+}
+
+/* Product grid rows */
+div[style*="display: flex"] {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 28px !important;
+  margin-bottom: 16px;
+}
+
+/* Individual product cards */
+div[style*="display: flex"] > div {
+  background: var(--cream);
+  border: 1px solid var(--light-tan);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  width: 190px;
+  box-shadow: 0 4px 14px var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+div[style*="display: flex"] > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(107, 78, 42, 0.22);
+}
+
+div[style*="display: flex"] > div img {
+  border-radius: var(--radius);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+div[style*="display: flex"] > div p:first-of-type {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+div[style*="display: flex"] > div p:last-of-type {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--red-accent);
+  letter-spacing: 0.05em;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  header nav {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav a {
+    font-size: 0.82rem;
+    padding: 5px 10px;
+  }
+
+  main {
+    padding: 30px 18px 40px;
+  }
+
+  div[style*="display: flex"] > div {
+    width: calc(50% - 14px);
+  }
+
+  form {
+    padding: 20px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  div[style*="display: flex"] > div {
+    width: 100%;
+  }
+}
